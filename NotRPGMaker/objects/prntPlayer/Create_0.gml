@@ -1,8 +1,5 @@
 #region Movement
 
-//Initialize walk speed
-walkSpeed=1;
-
 hsp=0;
 vsp=0;
 

@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"prntPlayer",
@@ -26,7 +27,22 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"walkSpeed","filters":[],"listItems":[],"multiselect":false,"name":"walkSpeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"_______________________________","filters":[],"listItems":[],"multiselect":false,"name":"_______________________________","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"upSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"upSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sEntUp","path":"sprites/sEntUp/sEntUp.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sEntUp","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"downSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"downSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sEntDown","path":"sprites/sEntDown/sEntDown.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sEntDown","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"leftSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"leftSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sEntLeft","path":"sprites/sEntLeft/sEntLeft.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sEntLeft","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"rightSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"rightSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sEntRight","path":"sprites/sEntRight/sEntRight.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sEntRight","varType":5,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
