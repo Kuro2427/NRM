@@ -1,5 +1,21 @@
+//Set up scribble
+scribble_font_set_default("fnNazoDefault");
+global.typist = scribble_typist();
+global.typist.in(0.5,0);
+
 //Define constants
 nazo_define_constants();
+
+global.nazoState=NAZOSTATES.FIELD;
+global.prevNazoState=global.nazoState;
+
+
+//Set up GUI
+global.guiW=360;
+global.guiH=270;
+display_set_gui_size(global.guiW,global.guiH);
+
+#region Debug mode stuff
 
 if(os_get_config()=="debug"){
 	global.debugMode=true;
@@ -13,3 +29,5 @@ else{
 }
 
 isConsoleUp=false;
+
+#endregion

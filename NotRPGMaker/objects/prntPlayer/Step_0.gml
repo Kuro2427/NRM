@@ -1,3 +1,6 @@
+//Only give control if not in menu
+if(global.nazoState==NAZOSTATES.FIELD){
+
 //Get input
 keyLeft=keyboard_check(vk_left);
 keyRight=keyboard_check(vk_right);
@@ -104,3 +107,10 @@ if(keyUse){
 }
 
 #endregion
+
+}
+else{
+	//Stop animating if menu up
+	asp=0;
+	image_index=0;
+}

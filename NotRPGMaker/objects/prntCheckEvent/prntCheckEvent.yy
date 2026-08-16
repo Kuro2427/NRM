@@ -9,8 +9,8 @@
   "name":"prntCheckEvent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/_NRM/Parents/Entities.yy",
+    "name":"Events",
+    "path":"folders/_NRM/Parents/Events.yy",
   },
   "parentObjectId":null,
   "persistent":false,

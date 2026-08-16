@@ -1,4 +1,4 @@
-//Engine controls
+#region Program Controls
 
 //Fullscreen toggle
 if(keyboard_check_pressed(vk_f4)){
@@ -22,3 +22,5 @@ if(keyboard_check_pressed(vk_f1))&&(global.debugMode){
 		isConsoleUp=true;
 	}
 }
+
+#endregion

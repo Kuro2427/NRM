@@ -8,8 +8,8 @@
   "name":"prntSolidCheckEvent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Static",
-    "path":"folders/_NRM/Parents/Static.yy",
+    "name":"Events",
+    "path":"folders/_NRM/Parents/Events.yy",
   },
   "parentObjectId":{
     "name":"prntCheckEvent",
