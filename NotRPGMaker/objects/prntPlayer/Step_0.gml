@@ -17,9 +17,9 @@ if (hsp != 0 || vsp != 0) {
     vsp /= len;
 }
 
-//Apply movement
-x+=hsp*walkSpeed;
-y+=vsp*walkSpeed;
+//Collide with tiles
+move_and_collide(hsp*walkSpeed,vsp*walkSpeed,collideWith);
+
 
 #endregion
 
@@ -61,20 +61,16 @@ if(hsp!=0 || vsp!=0){
 	}
 }
 
-show_debug_message(string(nameof(self))+" direction is "+string(dir));
-
 //Update sprite based on diretion
 
 //Only animate if moving
 if(hsp==0)&&(vsp==0){
 	asp=0;
+	image_index=0;
 } else{
 	asp=animSpeed;
 }
+image_speed=asp;
 
-//Force sprite speed to match ASP
-if(sprite_get_speed(sprite_index)!=asp){
-	sprite_set_speed(sprite_index,asp,spritespeed_framespergameframe);
-}
 
 #endregion

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"prntEvent",
+  "%Name":"prntSolidEvent",
   "eventList":[],
   "managed":true,
-  "name":"prntEvent",
+  "name":"prntSolidEvent",
   "overriddenProperties":[],
   "parent":{
     "name":"Static",
@@ -26,7 +26,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"sEvent",
     "path":"sprites/sEvent/sEvent.yy",

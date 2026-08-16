@@ -3,12 +3,16 @@
 hsp=0;
 vsp=0;
 
+collisionTilemapID = layer_tilemap_get_id(layer_get_id(collisionLayerName));
+
+collideWith = [collisionTilemapID, prntSolidEvent];
+
 #endregion
 
 #region Animation
 
 //Get desired animation speed from sprite
-animSpeed=(sprite_get_speed(sprite_index)/60);
+animSpeed=image_speed;
 frame=0;
 dir=DIRECTIONS.DOWN;
 
@@ -17,6 +21,6 @@ dir=DIRECTIONS.DOWN;
 #region Redundant vars
 
 wsp=walkSpeed;
-asp=animSpeed;
+asp=0;
 
 #endregion

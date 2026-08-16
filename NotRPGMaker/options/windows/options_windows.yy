@@ -1,6 +1,11 @@
 {
   "$GMWindowsOptions":"v2",
   "%Name":"Windows",
+  "ConfigValues":{
+    "debug":{
+      "option_windows_display_name":"NAZO RPG Manager",
+    },
+  },
   "name":"Windows",
   "option_windows_allow_fullscreen_switching":true,
   "option_windows_borderless":false,
