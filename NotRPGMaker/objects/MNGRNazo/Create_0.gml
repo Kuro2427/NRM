@@ -2,14 +2,14 @@
 nazo_define_constants();
 
 if(os_get_config()=="debug"){
-	global.isDebugMode=true;
-	window_set_caption("DEBUG MODE ON");
+	global.debugMode=true;
+	window_set_caption(window_get_caption()+" | DEBUG MODE ON");
 	show_debug_message("=========================");
 	show_debug_message("NRM: Debug Mode Activated");
 	show_debug_message("=========================");
 }
 else{
-	global.isDebugMode=false;
+	global.debugMode=false;
 }
 
 isConsoleUp=false;

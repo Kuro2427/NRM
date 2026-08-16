@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"NotRPGMaker",
-    "path":"NotRPGMaker.yyp",
+    "name":"Debug Room",
+    "path":"folders/Sample Project/Maps/Debug Room.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

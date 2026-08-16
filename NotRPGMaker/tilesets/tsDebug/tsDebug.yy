@@ -12,8 +12,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"NotRPGMaker",
-    "path":"NotRPGMaker.yyp",
+    "name":"Debug Room",
+    "path":"folders/Sample Project/Maps/Debug Room.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

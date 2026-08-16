@@ -4,6 +4,8 @@ keyRight=keyboard_check(vk_right);
 keyUp=keyboard_check(vk_up);
 keyDown=keyboard_check(vk_down);
 
+keyUse=keyboard_check_pressed(ord("Z"));
+
 #region Movement
 
 //Calculate movement
@@ -17,15 +19,30 @@ if (hsp != 0 || vsp != 0) {
     vsp /= len;
 }
 
-//Collide with tiles
-move_and_collide(hsp*walkSpeed,vsp*walkSpeed,collideWith);
+//Collide with tiles and entities
+var _collisions = move_and_collide(hsp*walkSpeed,vsp*walkSpeed,collideWith);
+
+//Change direction
+if(hsp!=0 || vsp!=0){
+	//If not moving vertically
+	if(vsp==0){
+		if(hsp>0) dir=DIRECTIONS.RIGHT;
+		if(hsp<0) dir=DIRECTIONS.LEFT;
+	}
+	
+	//If not moving horizontally
+	if(hsp==0){
+		if(vsp>0) dir=DIRECTIONS.DOWN;
+		if(vsp<0) dir=DIRECTIONS.UP;
+	}
+}
 
 
 #endregion
 
 #region Animation
 
-//Update direction
+//Update sprite based on diretion
 switch dir{
 	
 	case DIRECTIONS.UP:
@@ -46,25 +63,8 @@ switch dir{
 	
 }
 
-//Check if moving
-if(hsp!=0 || vsp!=0){
-	//If not moving vertically
-	if(vsp==0){
-		if(hsp>0) dir=DIRECTIONS.RIGHT;
-		if(hsp<0) dir=DIRECTIONS.LEFT;
-	}
-	
-	//If not moving horizontally
-	if(hsp==0){
-		if(vsp>0) dir=DIRECTIONS.DOWN;
-		if(vsp<0) dir=DIRECTIONS.UP;
-	}
-}
-
-//Update sprite based on diretion
-
 //Only animate if moving
-if(hsp==0)&&(vsp==0){
+if (hsp==0)&&(vsp==0){
 	asp=0;
 	image_index=0;
 } else{
@@ -72,5 +72,35 @@ if(hsp==0)&&(vsp==0){
 }
 image_speed=asp;
 
+
+#endregion
+
+#region Interaction
+
+// Determine the point to check based on direction
+interactHitboxX=x;
+interactHitboxY=y;
+
+
+switch (dir) {
+	case DIRECTIONS.UP:    interactHitboxY -= interactRange; break;
+	case DIRECTIONS.DOWN:  interactHitboxY += interactRange; break;
+	case DIRECTIONS.LEFT:  interactHitboxX -= interactRange; break;
+	case DIRECTIONS.RIGHT: interactHitboxX += interactRange; break;
+}
+
+if(keyUse){
+	
+	// Check if an interactable object exists at that target point
+    var _target = instance_position(interactHitboxX, interactHitboxY, prntCheckEvent);
+
+    // Trigger the event if found
+    if (_target != noone) {
+        with (_target) {
+            on_interact();
+        }
+    }
+
+}
 
 #endregion

@@ -12,7 +12,7 @@ if(keyboard_check_pressed(vk_f4)){
 }
 
 //Show console
-if(keyboard_check_pressed(vk_f1))&&(global.isDebugMode){
+if(keyboard_check_pressed(vk_f1))&&(global.debugMode){
 	if(isConsoleUp){
 		show_debug_log(false)
 		isConsoleUp=false;

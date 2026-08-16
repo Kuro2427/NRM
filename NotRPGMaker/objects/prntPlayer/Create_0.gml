@@ -5,7 +5,7 @@ vsp=0;
 
 collisionTilemapID = layer_tilemap_get_id(layer_get_id(collisionLayerName));
 
-collideWith = [collisionTilemapID, prntSolidEvent];
+collideWith = [collisionTilemapID, prntSolidCheckEvent];
 
 #endregion
 
@@ -15,6 +15,13 @@ collideWith = [collisionTilemapID, prntSolidEvent];
 animSpeed=image_speed;
 frame=0;
 dir=DIRECTIONS.DOWN;
+
+#endregion
+
+#region Interaction
+
+interactHitboxX=x;
+interactHitboxY=y;
 
 #endregion
 

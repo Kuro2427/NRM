@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"prntSolidEvent",
-  "eventList":[],
+  "%Name":"prntCheckEvent",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"prntSolidEvent",
+  "name":"prntCheckEvent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Static",
-    "path":"folders/_NRM/Parents/Static.yy",
+    "name":"Entities",
+    "path":"folders/_NRM/Parents/Entities.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -26,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"sEvent",
     "path":"sprites/sEvent/sEvent.yy",

@@ -13,8 +13,8 @@
   ],
   "name":"rmStartup",
   "parent":{
-    "name":"NotRPGMaker",
-    "path":"NotRPGMaker.yyp",
+    "name":"_NRM",
+    "path":"folders/_NRM.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
