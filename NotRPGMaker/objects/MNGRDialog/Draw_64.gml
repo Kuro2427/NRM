@@ -6,7 +6,7 @@ draw_sprite_stretched(window, 0, textboxX, textboxY, textboxWidth, textboxHeight
 // 2. Draw Speaker Nameplate
 var _speaker = ChatterboxGetContentSpeaker(chatterbox, 0);
 if (_speaker != "") {
-    var _speakerText = _speaker + ":";
+    var _speakerText = _speaker;
     var _textH = string_height_scribble(_speakerText);
     var _textW = string_width_scribble(_speakerText);
     
@@ -55,5 +55,17 @@ if (_optionCount > 0 && global.typist.get_state() == 1) {
     // Pointer
     var _cursorX = _boxX + choicePaddingX - cursorWidth;
     var _cursorY = _boxY + choicePaddingY + (cursor * choiceLineHeight) + cursorYOffset;
-    draw_sprite(cursorSprite, 0, _cursorX, _cursorY);
+    draw_sprite(cursorSprite, curFrame, _cursorX, _cursorY);
+}
+
+//5 Draw continue prompt
+if(global.typist.get_state()==1){
+	draw_sprite_ext(cursorSprite,curFrame,(global.guiW/2),global.guiH,1,1,270,c_white,1);
+}
+
+//6. Animate cursor
+if(curFrame<curFrameCount){
+	curFrame+=curSpd/60;
+}else{
+	curFrame=0
 }

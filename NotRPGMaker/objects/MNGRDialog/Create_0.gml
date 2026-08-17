@@ -42,6 +42,11 @@ cursor = 0;
 cursorWidth = sprite_get_width(cursorSprite);
 cursorYOffset = sprite_get_height(cursorSprite) / 2;
 
+curSpd = sprite_get_speed(cursorSprite);
+curFrameCount = sprite_get_number(cursorSprite);
+	
+curFrame=0;
+
 // Page & State
 page = 0;
 

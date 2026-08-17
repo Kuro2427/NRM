@@ -20,3 +20,8 @@ windowOverride=undefined;
 if windowOverride!=undefined{
 	window=windowOverride;
 }
+
+curSpd = sprite_get_speed(cursorSprite);
+curFrameCount = sprite_get_number(cursorSprite);
+	
+curFrame=0;
