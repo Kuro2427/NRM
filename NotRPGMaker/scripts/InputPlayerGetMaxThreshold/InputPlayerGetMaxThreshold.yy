@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InputPlayerGetMaxThreshold",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InputPlayerGetMaxThreshold",
+  "parent":{
+    "name":"Player",
+    "path":"folders/_Thirdparty_Extensions/Input/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

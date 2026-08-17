@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"nazoDialogFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"nazoDialogFunctions",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/_NRM/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

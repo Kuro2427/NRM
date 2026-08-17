@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InputDeviceGetNewActivityOnVerb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InputDeviceGetNewActivityOnVerb",
+  "parent":{
+    "name":"Device",
+    "path":"folders/_Thirdparty_Extensions/Input/Device.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -23,4 +23,9 @@ if(keyboard_check_pressed(vk_f1))&&(global.debugMode){
 	}
 }
 
+//Reset game if in debug
+if(keyboard_check_pressed(vk_f12))&&(global.debugMode){
+	game_restart();
+}
+
 #endregion

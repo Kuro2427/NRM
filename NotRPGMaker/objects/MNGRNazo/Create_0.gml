@@ -1,7 +1,7 @@
 //Set up scribble
 scribble_font_set_default("fnNazoDefault");
 global.typist = scribble_typist();
-global.typist.in(0.5,0);
+global.typist.in(0.7,0);
 
 //Define constants
 nazo_define_constants();

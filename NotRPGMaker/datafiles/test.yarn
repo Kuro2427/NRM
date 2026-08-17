@@ -1,0 +1,25 @@
+#__PrivCrochet_version:1
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 643,72
+__PrivCrochet_tags: 
+title: sign
+---
+Welcome to the test room.\nThere isn't much to see here right now, but this is where features get tested!
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1033,78
+__PrivCrochet_tags: 
+title: frungle
+---
+"Heya, I'm a frungle!"
+"What's a frungle, you ask...?"
+"I dunno"
+"I think it's French for..."\n"some bullshit I drew on the gamemaker sprite editor just to have another entity that isn't a sign"
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1026,-161
+__PrivCrochet_tags: 
+title: frungle2
+---
+"Don't quote me on that, though..."
+===

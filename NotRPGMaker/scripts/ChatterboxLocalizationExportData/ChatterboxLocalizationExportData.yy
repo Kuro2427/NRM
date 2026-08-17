@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ChatterboxLocalizationExportData",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ChatterboxLocalizationExportData",
+  "parent":{
+    "name":"Localisation",
+    "path":"folders/_Thirdparty_Extensions/Chatterbox/Localisation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

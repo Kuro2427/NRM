@@ -6,7 +6,7 @@
   "name":"scribble_anim_rainbow",
   "parent":{
     "name":"Animation",
-    "path":"folders/Scribble/Animation.yy",
+    "path":"folders/_Thirdparty_Extensions/Scribble/Animation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

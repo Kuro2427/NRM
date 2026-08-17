@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InputBindingFind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InputBindingFind",
+  "parent":{
+    "name":"Rebinding",
+    "path":"folders/_Thirdparty_Extensions/Input/Rebinding.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

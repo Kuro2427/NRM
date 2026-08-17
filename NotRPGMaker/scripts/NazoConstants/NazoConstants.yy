@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"NazoConstants",
+  "%Name":"nazoConstants",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"NazoConstants",
+  "name":"nazoConstants",
   "parent":{
     "name":"Scripts",
     "path":"folders/_NRM/Scripts.yy",
