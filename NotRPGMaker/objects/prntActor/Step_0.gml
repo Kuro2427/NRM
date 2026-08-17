@@ -1,19 +1,34 @@
-//Only give control if not in menu
-if(global.nazoState==NAZOSTATES.FIELD){
+//Reset input every frame
+keyLeft  = false;
+keyRight = false;
+keyUp    = false;
+keyDown  = false;
+keyUse   = false;
 
-//Get input
-keyLeft=InputCheck(INPUT_VERB.LEFT);
-keyRight=InputCheck(INPUT_VERB.RIGHT);
-keyUp=InputCheck(INPUT_VERB.UP);
-keyDown=InputCheck(INPUT_VERB.DOWN);
+//Only make actor controllable if set up to do so
+if(state==ACTORSTATES.CONTROL)&&(global.nazoState==NAZOSTATES.FIELD){
 
-keyUse=InputCheck(INPUT_VERB.ACCEPT);
+	//Get input
+	keyLeft=InputCheck(INPUT_VERB.LEFT);
+	keyRight=InputCheck(INPUT_VERB.RIGHT);
+	keyUp=InputCheck(INPUT_VERB.UP);
+	keyDown=InputCheck(INPUT_VERB.DOWN);
 
-#region Movement
+	keyUse=InputPressed(INPUT_VERB.ACCEPT);
+	
+	//Interaction cooldown
+	if(interactCooldown>0){
+		interactCooldown--;
+	}
 
-//Calculate movement
-hsp=keyRight-keyLeft;
-vsp=keyDown-keyUp;
+	#region Movement
+
+	//Calculate movement
+	hsp=keyRight-keyLeft;
+	vsp=keyDown-keyUp;
+	
+
+}
 
 // Normalize movement if moving diagonally
 if (hsp != 0 || vsp != 0) {
@@ -81,8 +96,8 @@ image_speed=asp;
 #region Interaction
 
 // Determine the point to check based on direction
-interactHitboxX=x;
-interactHitboxY=y;
+interactHitboxX=x+interactHitboxOffsetX;
+interactHitboxY=y+interactHitboxOffsetY;
 
 
 switch (dir) {
@@ -92,12 +107,9 @@ switch (dir) {
 	case DIRECTIONS.RIGHT: interactHitboxX += interactRange; break;
 }
 
-if(interactCooldown>0){
-	interactCooldown--;
-}
+//Only interact if player has control of actor and cooldown is 0
+if(keyUse)&&(interactCooldown==0)&&(state==ACTORSTATES.CONTROL)&&(global.nazoState==NAZOSTATES.FIELD){
 
-if(keyUse)&&(interactCooldown==0){
-	
 	// Check if an interactable object exists at that target point
     var _target = instance_position(interactHitboxX, interactHitboxY, prntCheckEvent);
 
@@ -112,10 +124,3 @@ if(keyUse)&&(interactCooldown==0){
 }
 
 #endregion
-
-}
-else{
-	//Stop animating if menu up
-	asp=0;
-	image_index=0;
-}

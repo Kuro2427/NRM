@@ -5,6 +5,7 @@ if(global.debugMode){
 	//Show interaction "hitbox"
 	var _target = instance_position(interactHitboxX, interactHitboxY, prntCheckEvent);
 	
+	//Blue if no event at target
 	if(_target==noone){
 		draw_set_colour(c_blue);
 	}

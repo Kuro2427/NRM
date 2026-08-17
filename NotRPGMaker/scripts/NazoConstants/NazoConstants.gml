@@ -14,5 +14,13 @@ enum DIRECTIONS{
 	RIGHT
 }
 
+//Actor states
+enum ACTORSTATES{
+	CONTROL, //Behaves as player
+	EVENT, //Behaves as event
+	IDLE, //No behaviour
+	CUTSCENE //Behaves as cutscene actor
+}
+
 
 }
