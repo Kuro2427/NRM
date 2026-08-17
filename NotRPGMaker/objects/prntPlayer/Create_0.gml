@@ -23,6 +23,8 @@ dir=DIRECTIONS.DOWN;
 interactHitboxX=x;
 interactHitboxY=y;
 
+interactCooldown=0;
+
 #endregion
 
 #region Redundant vars

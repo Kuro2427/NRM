@@ -52,9 +52,3 @@ textboxX=boxHorizontalMargin;
 textboxY=global.guiH-(boxHeight+boxVerticalMargin);
 textboxWidth=global.guiW-(boxHorizontalMargin*2);
 textboxHeight=boxHeight;
-
-//Override window on event summoned
-windowOverride=undefined;
-if windowOverride!=undefined{
-	window=windowOverride;
-}

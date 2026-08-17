@@ -9,6 +9,14 @@ nazo_define_constants();
 global.nazoState=NAZOSTATES.FIELD;
 global.prevNazoState=global.nazoState;
 
+stateSwitchCD=0;
+doStateReset=false;
+
+reset_state = function(){
+	stateSwitchCD=30;
+	doStateReset=true;
+}
+
 
 //Set up GUI
 global.guiW=360;

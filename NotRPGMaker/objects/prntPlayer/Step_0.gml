@@ -2,12 +2,12 @@
 if(global.nazoState==NAZOSTATES.FIELD){
 
 //Get input
-keyLeft=keyboard_check(vk_left);
-keyRight=keyboard_check(vk_right);
-keyUp=keyboard_check(vk_up);
-keyDown=keyboard_check(vk_down);
+keyLeft=InputCheck(INPUT_VERB.LEFT);
+keyRight=InputCheck(INPUT_VERB.RIGHT);
+keyUp=InputCheck(INPUT_VERB.UP);
+keyDown=InputCheck(INPUT_VERB.DOWN);
 
-keyUse=keyboard_check_pressed(ord("Z"));
+keyUse=InputCheck(INPUT_VERB.ACCEPT);
 
 #region Movement
 
@@ -92,13 +92,18 @@ switch (dir) {
 	case DIRECTIONS.RIGHT: interactHitboxX += interactRange; break;
 }
 
-if(keyUse){
+if(interactCooldown>0){
+	interactCooldown--;
+}
+
+if(keyUse)&&(interactCooldown==0){
 	
 	// Check if an interactable object exists at that target point
     var _target = instance_position(interactHitboxX, interactHitboxY, prntCheckEvent);
 
     // Trigger the event if found
     if (_target != noone) {
+		interactCooldown = 15;
         with (_target) {
             on_interact();
         }
