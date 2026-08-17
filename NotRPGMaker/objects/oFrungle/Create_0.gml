@@ -1,12 +1,16 @@
-event_inherited()
+event_inherited();
 
-talkedTo=false;
+actorName="frungle";
+state=ACTORSTATES.EVENT;
+prevState=state;
 
-on_interact = function(){
-	if(!talkedTo){
-		showDialog("test.yarn", "frungle");
-		talkedTo=true;
+interacted=false;
+
+on_interact =  function(){
+	if(!interacted){
+		show_dialog("test.yarn","frungle");
+		interacted=true;
 	} else{
-		showDialog("test.yarn", "frungle2");
+		show_dialog("test.yarn","frungle2");
 	}
 }

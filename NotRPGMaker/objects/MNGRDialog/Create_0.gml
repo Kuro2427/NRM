@@ -57,3 +57,6 @@ textboxX=boxHorizontalMargin;
 textboxY=global.guiH-(boxHeight+boxVerticalMargin);
 textboxWidth=global.guiW-(boxHorizontalMargin*2);
 textboxHeight=boxHeight;
+
+//Cutscene stuff
+inCutsceneWait = false;

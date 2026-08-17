@@ -1,5 +1,10 @@
 // obj_dialogue_manager -> Draw GUI Event
 
+//Doesn't draw textbox if anyone is moving
+if(inCutsceneWait){
+	exit;
+}
+
 // 1. Draw Main Text Box
 draw_sprite_stretched(window, 0, textboxX, textboxY, textboxWidth, textboxHeight);
 

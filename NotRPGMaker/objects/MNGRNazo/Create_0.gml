@@ -5,6 +5,7 @@ global.typist.in(0.7,0);
 
 //Define constants
 nazo_define_constants();
+nazo_event_init();
 
 global.nazoState=NAZOSTATES.FIELD;
 global.prevNazoState=global.nazoState;

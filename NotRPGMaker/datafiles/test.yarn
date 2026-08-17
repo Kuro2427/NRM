@@ -12,9 +12,16 @@ __PrivCrochet_tags:
 title: frungle
 ---
 "Heya, I'm a frungle!"
+<<set_actor_speed("player",0.2)>>
+<<move_actor("player","right",1)>>
+"Hey! Don't just walk away on me!"
+<<set_actor_dir("player","left")>>
+"Jeez... The nerve of some people..."
+"Anyway, where was I again?\nOh, right!"
 "What's a frungle, you ask...?"
 "I dunno"
 "I think it's French for..."\n"some bullshit I drew on the gamemaker sprite editor just to have another entity that isn't a sign"
+<<set_actor_speed("player",1)>>
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 1026,-161

@@ -1,6 +1,6 @@
 draw_self();
 
-if(global.debugMode){
+if(global.debugMode)&&(state==ACTORSTATES.CONTROL){
 	
 	//Show interaction "hitbox"
 	var _target = instance_position(interactHitboxX, interactHitboxY, prntCheckEvent);

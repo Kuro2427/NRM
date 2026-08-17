@@ -7,6 +7,16 @@ if (ChatterboxGetContent(chatterbox, 0) == undefined) {
 var _textComplete = (global.typist.get_state() == 1);
 var _optionCount = ChatterboxGetOptionCount(chatterbox);
 
+
+//Stops player from skipping dialogue when events are moving
+if(inCutsceneWait){
+	if(!is_any_actor_moving()){
+		inCutsceneWait=false;
+	} else{
+		exit;
+	};
+}
+
 // Skip Text Typing
 if (InputPressed(INPUT_VERB.CANCEL) && !_textComplete) {
     global.typist.skip();

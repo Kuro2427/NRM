@@ -1,4 +1,4 @@
-function showDialog(_file, _node = undefined, _window = undefined) {
+function show_dialog(_file, _node = undefined, _window = undefined) {
     var _inst = instance_create_depth(0, 0, -100, MNGRDialog);
     
     with (_inst) {
@@ -18,7 +18,7 @@ function showDialog(_file, _node = undefined, _window = undefined) {
 }
 
 //Create dumb textbox that doesn't use chatterbox
-function showDumbTextbox(_text,_speaker=undefined,_window=undefined){
+function show_dumb_textbox(_text,_speaker=undefined,_window=undefined){
 	var _inst = instance_create_depth(0, 0, -100, MNGRDumbTextbox);
 	
 	 with (_inst) {

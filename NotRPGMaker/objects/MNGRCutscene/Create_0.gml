@@ -1,0 +1,2 @@
+moveQueue = [];
+inCutsceneWait=false;

@@ -4,38 +4,20 @@ actorName="player";
 state=ACTORSTATES.CONTROL;
 prevState=state;
 
-//Actor individual functions
-actor_switch_state = function(_state){
-	//Stop moving and animating
-	hsp=0;
-	vsp=0;
-	asp=0;
-	
-	//Store old state and apply specified state
-	prevState=state;
-	state=_state;
-}
-
-actor_revert_state = function(){
-	//Stop moving and animating just in case
-	hsp=0;
-	vsp=0;
-	asp=0;
-	
-	//Revert to previous state
-	state=prevState;
-	prevState=state;
-}
-
 #endregion
 
 #region Movement
 
+//HSP and VSP if being controlled by player
 hsp=0;
 vsp=0;
 
-collisionTilemapID = layer_tilemap_get_id(layer_get_id(collisionLayerName));
+//Targets if in cutscene
+targetX = 0;
+targetY= 0;
+cutsceneWalkSpeed=walkSpeed;
 
+collisionTilemapID = layer_tilemap_get_id(layer_get_id(collisionLayerName));
 collideWith = [collisionTilemapID, prntSolidCheckEvent];
 
 #endregion

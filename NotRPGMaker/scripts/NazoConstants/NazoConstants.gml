@@ -1,5 +1,7 @@
 function nazo_define_constants(){
 	
+global.tileSize = 16;
+	
 //Nazo game states
 enum NAZOSTATES{
 	FIELD,

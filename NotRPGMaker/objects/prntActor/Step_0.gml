@@ -7,6 +7,7 @@ keyUse   = false;
 
 //Only make actor controllable if set up to do so
 if(state==ACTORSTATES.CONTROL)&&(global.nazoState==NAZOSTATES.FIELD){
+	//Movement as player
 
 	//Get input
 	keyLeft=InputCheck(INPUT_VERB.LEFT);
@@ -27,31 +28,61 @@ if(state==ACTORSTATES.CONTROL)&&(global.nazoState==NAZOSTATES.FIELD){
 	hsp=keyRight-keyLeft;
 	vsp=keyDown-keyUp;
 	
-
-}
-
-// Normalize movement if moving diagonally
-if (hsp != 0 || vsp != 0) {
-    var len = point_distance(0, 0, hsp, vsp);
-    hsp /= len;
-    vsp /= len;
-}
-
-//Collide with tiles and entities
-var _collisions = move_and_collide(hsp*walkSpeed,vsp*walkSpeed,collideWith);
-
-//Change direction
-if(hsp!=0 || vsp!=0){
-	//If not moving vertically
-	if(vsp==0){
-		if(hsp>0) dir=DIRECTIONS.RIGHT;
-		if(hsp<0) dir=DIRECTIONS.LEFT;
+	// Normalize movement if moving diagonally
+	if (hsp != 0 || vsp != 0) {
+	    var len = point_distance(0, 0, hsp, vsp);
+	    hsp /= len;
+	    vsp /= len;
 	}
+
+	//Collide with tiles and entities
+	var _collisions = move_and_collide(hsp*walkSpeed,vsp*walkSpeed,collideWith);
+
+	//Change direction
+	if(hsp!=0 || vsp!=0){
+		//If not moving vertically
+		if(vsp==0){
+			if(hsp>0) dir=DIRECTIONS.RIGHT;
+			if(hsp<0) dir=DIRECTIONS.LEFT;
+		}
 	
-	//If not moving horizontally
-	if(hsp==0){
-		if(vsp>0) dir=DIRECTIONS.DOWN;
-		if(vsp<0) dir=DIRECTIONS.UP;
+		//If not moving horizontally
+		if(hsp==0){
+			if(vsp>0) dir=DIRECTIONS.DOWN;
+			if(vsp<0) dir=DIRECTIONS.UP;
+		}
+	}
+
+}else if(state==ACTORSTATES.CUTSCENE){
+	//Movement as actor
+	
+	//Determine step size to avoid overshooting target
+	var _moveX = sign(targetX) * min(walkSpeed, abs(targetX));
+	var _moveY = sign(targetY) * min(walkSpeed, abs(targetY));
+	
+	//Normalize diagonals
+	var len = point_distance(0, 0, _moveX, _moveY);
+    _moveX /= len;
+    _moveY /= len;
+	
+	//Apply movement
+	x+=_moveX*cutsceneWalkSpeed;
+	y+=_moveY*cutsceneWalkSpeed;
+	
+	//Drain movement
+	if(targetX!=0) targetX-=_moveX*cutsceneWalkSpeed;
+	if(targetY!=0) targetY-=_moveY*cutsceneWalkSpeed;
+	
+	// Snap tiny floating point remainders to absolute zero
+	if (abs(targetX) < 0.1) targetX = 0;
+	if (abs(targetY) < 0.1) targetY = 0;
+	
+	asp=animSpeed;
+	
+	//Revert to previous state once motion is done
+	if(targetX==0 && targetY==0){
+		asp=0;
+		state=prevState;
 	}
 }
 
