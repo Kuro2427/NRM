@@ -3,7 +3,7 @@ if(global.debugMode){
 	var _pct=(fps/_targetfps)*100;
 
 	
-	draw_healthbar(1,1,global.guiW-1,5,_pct,c_black,c_red,c_lime,0,true,true);
+	draw_healthbar(1,1,global.guiW-2,5,_pct,c_black,c_red,c_lime,0,true,true);
 	
 	
 	draw_set_colour(c_black);

@@ -25,15 +25,15 @@
   "name":"sNazoDefaultWindow",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":2,
+    "bottom":3,
     "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
     "highlightStyle":0,
-    "left":2,
+    "left":3,
     "resourceType":"GMNineSliceData",
     "resourceVersion":"2.0",
-    "right":2,
+    "right":3,
     "tileMode":[
       0,
       0,
@@ -41,7 +41,7 @@
       0,
       0,
     ],
-    "top":2,
+    "top":3,
   },
   "origin":0,
   "parent":{
