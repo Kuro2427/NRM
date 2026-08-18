@@ -1,12 +1,5 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 643,72
-__PrivCrochet_tags: 
-title: sign
----
-Welcome to the test room.\nThere isn't much to see here right now, but this is where features get tested!
-===
-__PrivCrochet_colorID: 0
 __PrivCrochet_position: 1033,78
 __PrivCrochet_tags: 
 title: frungle
@@ -29,4 +22,19 @@ __PrivCrochet_tags:
 title: frungle2
 ---
 "Don't quote me on that, though..."
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 698,75
+__PrivCrochet_tags: 
+title: coolfrungle
+---
+???: Hmpf...[delay]\nWhatcha lookin' at, kid?
+???: Listen bubba, you better mind your own damn beeswax, pal.
+Cool Frungle: I'm a COOL frungle, y'hear?[delay]\nI'm nothing like those dumbasses up there in that stone brick building with no floor.
+Cool Frungle: I'm just out here straight CHILLEN.[delay]\nIn the GRASS.[delay]\nEnjoying NATURE[delay], cool guy shit you'd never understand.
+Cool Frungle: So you better make like a tree and [shake]SPLIT[/] before you catch these metaphorical fists!
+-> Oh buddy, you're ON!
+    Cool Frungle: Heh...[delay] I'm gonna enjoy this
+-> Sorry man, see ya...
+    Cool Frungle: Yeah, that's what I thought...
 ===

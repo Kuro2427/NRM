@@ -11,8 +11,8 @@
   "name":"prntActor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dynamic",
-    "path":"folders/_NRM/Parents/Entities/Dynamic.yy",
+    "name":"Entities",
+    "path":"folders/_NRM/Parents/Entities.yy",
   },
   "parentObjectId":{
     "name":"prntSolidCheckEvent",

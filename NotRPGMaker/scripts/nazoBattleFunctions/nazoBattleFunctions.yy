@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"nazoConstants",
+  "%Name":"nazoBattleFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"nazoConstants",
+  "name":"nazoBattleFunctions",
   "parent":{
-    "name":"Database",
-    "path":"folders/_NRM/Database.yy",
+    "name":"Scripts",
+    "path":"folders/_NRM/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

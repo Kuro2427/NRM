@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"nazoConstants",
+  "%Name":"nazoHeroes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"nazoConstants",
+  "name":"nazoHeroes",
   "parent":{
     "name":"Database",
     "path":"folders/_NRM/Database.yy",
