@@ -22,6 +22,9 @@ global.party = [global.heroes.hero,global.heroes.hero,global.heroes.hero,global.
 
 state = BATTLESTATES.INIT;
 turnQueue = [];
+turn=0;
+
+#region UI
 
 //Battle UI Container
 battleUIHeight = 86
@@ -37,5 +40,13 @@ commandWindowW=80;
 
 //Action Menu
 battleMenu=["Attack","Magic","Item","Flee"];
+battleMenuCursor=0;
 
-turn=0;
+curSpd = sprite_get_speed(global.defaultCursor);
+curFrameCount = sprite_get_number(global.defaultCursor);
+curW = sprite_get_width(global.defaultCursor);
+curH = sprite_get_height(global.defaultCursor);
+	
+curFrame=0;
+
+#endregion

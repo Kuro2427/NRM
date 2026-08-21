@@ -20,6 +20,11 @@ for(i=0; i<array_length(battleMenu); i++){
 	scribble(_text).draw(_textX, _textY+_lineHeight*i);
 }
 
+//Draw cursor
+var _menuOptionH = string_height_scribble(battleMenu[0])
+var _battleMenuCursorY = uiContainerY+global.textPaddingV+((_menuOptionH+2)*battleMenuCursor)+curH/2
+draw_sprite_ext(global.defaultCursor,curFrame,commandWindowW-(global.textPadingH/2)-curW/2,_battleMenuCursorY,1,1,180,c_white,1);
+
 #endregion
 
 #region 2. Draw party list
@@ -104,3 +109,10 @@ for(i=0; i<array_length(global.party); i++;){
 }
 
 #endregion
+
+//Animate cursors
+if(curFrame<curFrameCount){
+	curFrame+=curSpd/60;
+}else{
+	curFrame=0
+}
