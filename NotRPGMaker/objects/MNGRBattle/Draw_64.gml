@@ -66,7 +66,7 @@ for(i=0; i<array_length(global.party); i++;){
 		//Draw MP
 		
 			//Get MP and convert to highlighted string with UI font
-			var _mpString = _highlight+global.defaultUIFont+    "MP: "+string(global.party[i].mp)+"/"+string(global.party[i].maxMP);
+			var _mpString = _highlight+global.defaultUIFont+    string(global.party[i].mp)+"/"+string(global.party[i].maxMP)+" MP";
 			var _mpStringW = string_width_scribble(_mpString);
 		
 			var _mpBarX = (_heroStatsContainerX-_mpStringW)-1;
@@ -87,7 +87,7 @@ for(i=0; i<array_length(global.party); i++;){
 		//Draw HP
 		
 			//Get HP and convert to highlighted string with UI font
-			var _hpString = _highlight+global.defaultUIFont+    "HP: "+string(global.party[i].hp)+"/"+string(global.party[i].maxHP);
+			var _hpString = _highlight+global.defaultUIFont+    string(global.party[i].hp)+"/"+string(global.party[i].maxHP)+" HP";
 			var _hpStringW = string_width_scribble(_mpString);
 			var _hpX = (_heroStatsContainerX-_hpStringW)-_hpStringW-(global.textPadingH/2);
 		
