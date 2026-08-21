@@ -14,7 +14,7 @@ global.windowScale = 2;
 #region GUI
 
 //Default UI font; MUST BE IN BRACKETS
-global.defaultUIFont = "[fnNazoDefault]";
+global.defaultUIFont = "fnNazoDefault";
 //Default dialog font
 global.defaultFont = "fnNazoDialogDefault";
 //Default window graphic

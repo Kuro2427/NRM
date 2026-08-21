@@ -4,7 +4,7 @@ if(global.debugMode){
 	draw_rectangle(uiContainerX,uiContainerY,uiContainerX+uiContainerW,uiContainerY+uiContainerH,true);
 }
 
-//1. Draw battle commands
+#region 1. Draw battle commands
 
 //Draw window
 draw_sprite_stretched(battleWindow,0,uiContainerX,uiContainerY,commandWindowW,uiContainerH);
@@ -20,7 +20,9 @@ for(i=0; i<array_length(battleMenu); i++){
 	scribble(_text).draw(_textX, _textY+_lineHeight*i);
 }
 
-//2. Draw party list
+#endregion
+
+#region 2. Draw party list
 
 var _partyListX = uiContainerX + commandWindowW + global.windowMarginH;
 var _partyListW = uiContainerW - commandWindowW - global.windowMarginH;
@@ -65,6 +67,10 @@ for(i=0; i<array_length(global.party); i++;){
 			var _mpBarX = (_heroStatsContainerX-_mpStringW)-1;
 			var _mpBarY =_heroStatsContainerY+8;
 			var _mpbarW = _mpStringW;
+			
+			//Draw fake bar outline
+			draw_set_colour(c_black);
+			draw_rectangle(_mpBarX-1,_mpBarY-1,_mpBarX+_mpbarW+1,_mpBarY+6,false);
 		
 			//Draw MP bar
 			var _mpPerc = (global.party[i].mp/global.party[i].maxMP) * 100;
@@ -83,6 +89,10 @@ for(i=0; i<array_length(global.party); i++;){
 			var _hpBarX = _hpX-2;
 			var _hpBarY =_heroStatsContainerY+8;
 			var _hpbarW = _hpStringW;
+			
+			//Draw fake bar outline
+			draw_set_colour(c_black);
+			draw_rectangle(_hpBarX-1,_hpBarY-1,_hpBarX+_hpbarW+1,_hpBarY+6,false);
 		
 			//Draw MP bar
 			var _hpPerc = (global.party[i].hp/global.party[i].maxHP) * 100;
@@ -91,5 +101,6 @@ for(i=0; i<array_length(global.party); i++;){
 			//Draw MP Text
 			scribble(_hpString).align(fa_left,fa_top).draw(_hpX,_heroStatsContainerY);
 	
-	
 }
+
+#endregion

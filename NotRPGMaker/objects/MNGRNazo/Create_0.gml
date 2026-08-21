@@ -9,6 +9,10 @@ scribble_font_set_default(global.defaultFont);
 global.typist = scribble_typist();
 global.typist.in(0.7,0);
 
+scribble_font_bake_shadow(global.defaultUIFont,"fnNazoDefaultOutline",1,1,c_black,0.5,0,false);
+
+global.defaultUIFont = "[fnNazoDefaultOutline]";
+
 //Define constants
 nazo_event_init();
 

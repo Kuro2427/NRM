@@ -24,7 +24,7 @@ state = BATTLESTATES.INIT;
 turnQueue = [];
 
 //Battle UI Container
-battleUIHeight = 84
+battleUIHeight = 86
 
 uiContainerX = horizontalMargin;
 uiContainerY = (global.guiH - battleUIHeight) - global.windowMarginV;
