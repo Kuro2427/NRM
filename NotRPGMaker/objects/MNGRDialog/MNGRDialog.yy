@@ -29,8 +29,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"boxHeight","filters":[],"listItems":[],"multiselect":false,"name":"boxHeight","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"80","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"boxHorizontalMargin","filters":[],"listItems":[],"multiselect":false,"name":"boxHorizontalMargin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"boxHeight","filters":[],"listItems":[],"multiselect":false,"name":"boxHeight","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"86","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"boxHorizontalMargin","filters":[],"listItems":[],"multiselect":false,"name":"boxHorizontalMargin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"boxVerticalMargin","filters":[],"listItems":[],"multiselect":false,"name":"boxVerticalMargin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"8","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"window","filters":[
         "GMSprite",

@@ -4,6 +4,11 @@ if(global.debugMode){
 	draw_rectangle(uiContainerX,uiContainerY,uiContainerX+uiContainerW,uiContainerY+uiContainerH,true);
 }
 
+//Don't draw anything if in dialogue
+if(instance_exists(MNGRDialog)||instance_exists(MNGRDumbTextbox)){
+	exit;
+}
+
 #region 1. Draw battle commands
 
 //Draw window
@@ -14,16 +19,23 @@ for(i=0; i<array_length(battleMenu); i++){
 	var _textX = uiContainerX + global.textPadingH;
 	var _textY = uiContainerY + global.textPaddingV;
 	
-	var _text = global.defaultUIFont+battleMenu[i];
+	//Gray out text if flee is unavailable
+	var _gray = "";
+	if(i==3 && !global.battleData.canFlee) _gray = "[c_gray]"
+	else _gray = "";
+	
+	var _text = _gray+global.defaultUIFont+battleMenu[i];
 	var _lineHeight = string_height_scribble(_text)
 	
 	scribble(_text).draw(_textX, _textY+_lineHeight*i);
 }
 
 //Draw cursor
-var _menuOptionH = string_height_scribble(battleMenu[0])
-var _battleMenuCursorY = uiContainerY+global.textPaddingV+((_menuOptionH+2)*battleMenuCursor)+curH/2
-draw_sprite_ext(global.defaultCursor,curFrame,commandWindowW-(global.textPadingH/2)-curW/2,_battleMenuCursorY,1,1,180,c_white,1);
+if(battleMenuState==BATTLEMENUSTATES.ACTION)&&(state==BATTLESTATES.PLAYER_INPUT){
+	var _menuOptionH = string_height_scribble(battleMenu[0])
+	var _battleMenuCursorY = uiContainerY+global.textPaddingV+((_menuOptionH+2)*battleMenuCursor)+curH/2
+	draw_sprite_ext(global.defaultCursor,curFrame,commandWindowW-(global.textPadingH/2)-curW/2,_battleMenuCursorY,1,1,180,c_white,1);
+}
 
 #endregion
 
@@ -40,8 +52,8 @@ for(i=0; i<array_length(global.party); i++;){
 	var _textX = _partyListX + global.textPadingH;
 	var _textY = uiContainerY + global.textPaddingV;
 	
-	//Highlight hero name if it's their turn
-	if(turn==i) _highlight = ""
+	//Highlight hero name if we're inputting commands and it's their turn
+	if(heroChoiceTurn==i && state==BATTLESTATES.PLAYER_INPUT) _highlight = ""
 	else _highlight = "[c_gray]"
 	
 	var _text = global.defaultUIFont+global.party[i].heroName;
