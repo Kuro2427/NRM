@@ -1,3 +1,11 @@
+//Define States
+enum ACTORSTATES{
+	CONTROL, //Behaves as player
+	EVENT, //Behaves as event
+	IDLE, //No behaviour
+	CUTSCENE //Behaves as cutscene actor
+}
+
 #region Player state management
 
 actorName="player";

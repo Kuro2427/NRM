@@ -1,7 +1,7 @@
 global.heroes = {
 	
 	hero:{
-		heroName:"Hero",
+		heroName:"Lennon",
 		level:1,
 		xp:0,
 		maxHP:10,

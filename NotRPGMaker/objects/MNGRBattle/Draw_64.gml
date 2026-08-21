@@ -1,74 +1,95 @@
-// --- 1. DRAW NARRATION BANNER ---
-var _textH = string_height_scribble(narrationText);
-var _bannerH = _textH + (textPaddingV * 2);
+//Draw container bounds if in debug mode
+if(global.debugMode){
+	draw_set_colour(c_red);
+	draw_rectangle(uiContainerX,uiContainerY,uiContainerX+uiContainerW,uiContainerY+uiContainerH,true);
+}
 
-draw_sprite_stretched(battleWindow, 0, 0, 0, global.guiW, _bannerH);
-scribble(narrationText)
-		.align(fa_center, fa_top)
-		.draw(global.guiW / 2, textPaddingV);
+//1. Draw battle commands
 
+//Draw window
+draw_sprite_stretched(battleWindow,0,uiContainerX,uiContainerY,commandWindowW,uiContainerH);
 
-// --- 2. DRAW PARTY CARDS ---
-var _partyCount = array_length(global.party);
+//Draw text
+for(i=0; i<array_length(battleMenu); i++){
+	var _textX = uiContainerX + global.textPadingH;
+	var _textY = uiContainerY + global.textPaddingV;
+	
+	var _text = global.defaultUIFont+battleMenu[i];
+	var _lineHeight = string_height_scribble(_text)
+	
+	scribble(_text).draw(_textX, _textY+_lineHeight*i);
+}
 
-if (_partyCount > 0) {
-		// Determine card padding first
-		//If party is full, set padding to 0
-		var _cardPadding = (_partyCount < 4) ? 8 : 0; 
+//2. Draw party list
+
+var _partyListX = uiContainerX + commandWindowW + global.windowMarginH;
+var _partyListW = uiContainerW - commandWindowW - global.windowMarginH;
+
+//Draw window
+draw_sprite_stretched(battleWindow,0,_partyListX,uiContainerY,_partyListW,battleUIHeight);
+
+for(i=0; i<array_length(global.party); i++;){
+	var _highlight = ""
+	var _textX = _partyListX + global.textPadingH;
+	var _textY = uiContainerY + global.textPaddingV;
+	
+	//Highlight hero name if it's their turn
+	if(turn==i) _highlight = ""
+	else _highlight = "[c_gray]"
+	
+	var _text = global.defaultUIFont+global.party[i].heroName;
+	var _lineHeight = string_height_scribble(_text);
+	
+	//Draw hero name
+	scribble(_highlight+_text).draw(_textX,_textY+_lineHeight*i);
+	
+	//2.5 Draw hero HP/MP
+	//Everything in this secrion is right aligned
+	
+		var _heroStatsContainerX = _partyListX + (_partyListW - global.textPadingH);
+		var _heroStatsContainerY = _textY+(_lineHeight-1)*i;
+		var _heroStatsContainerW = _partyListW/1.5;
+		var _heroStatsContainerH = _lineHeight;
 		
-		// Calculate total layout width with correct padding
-		var _totalWidth = (_partyCount * heroCardW) + ((_partyCount - 1) * _cardPadding);
+		var _heroStatsX = _heroStatsContainerX+_heroStatsContainerW;
+	
+		//Draw hero stats container bounds if in debug mode
+		if(global.debugMode) draw_rectangle(_heroStatsContainerX,_heroStatsContainerY,_heroStatsContainerX-_heroStatsContainerW,_heroStatsContainerY+_heroStatsContainerH,true);
 		
-		// Center the starting X coordinate on the GUI layer
-		var _startX = (display_get_gui_width() - _totalWidth) / 2;
-		var _drawY = heroCardY - raiseModifier;
-
-		// SINGLE LOOP FOR CARDS
-		for (var i = 0; i < _partyCount; i++) {
-				var _currentHero = global.party[i];
-				
-				// Card positioning
-				var _cardX = _startX + (i * (heroCardW + _cardPadding));
-				var _cardCenter = _cardX + (heroCardW / 2);
-
-				// Draw Card Background Window
-				draw_sprite_stretched(battleWindow, 0, _cardX, _drawY, heroCardW, heroCardH);
-
-				// Draw Hero Name
-				scribble(_currentHero.heroName)
-						.align(fa_center, fa_top)
-						.draw(_cardCenter, _drawY + textPaddingV);
-
-				// --- HEALTH BAR ---
-				var _healthPCT = (_currentHero.hp / _currentHero.maxHP) * 100;
-				var _barX = _cardX + textPaddingH;
-				var _barW = heroCardW - (textPaddingH * 2);
-				var _barH = 16;
-				
-				var _healthbarY = _drawY + heroCardInfoMargin + textPaddingV;
-
-				draw_healthbar(
-						_barX, _healthbarY, 
-						_barX + _barW, _healthbarY + _barH, 
-						_healthPCT, c_dkgrey, c_red, c_green, 
-						0, true, false
-				);
-
-				scribble("HP: " + string(_currentHero.hp) + "/" + string(_currentHero.maxHP))
-						.draw(_barX + 2, _healthbarY);
-
-				// --- MANA BAR ---
-				var _manaPCT = (_currentHero.mp / _currentHero.maxMP) * 100;
-				var _manabarY = _drawY + (heroCardInfoMargin * 2) + textPaddingV;
-
-				draw_healthbar(
-						_barX, _manabarY, 
-						_barX + _barW, _manabarY + _barH, 
-						_manaPCT, c_dkgrey, c_purple, c_navy, 
-						0, true, false
-				);
-
-				scribble("MP: " + string(_currentHero.mp) + "/" + string(_currentHero.maxMP))
-						.draw(_barX + 2, _manabarY);
-		}
+		//Draw MP
+		
+			//Get MP and convert to highlighted string with UI font
+			var _mpString = _highlight+global.defaultUIFont+    "MP: "+string(global.party[i].mp)+"/"+string(global.party[i].maxMP);
+			var _mpStringW = string_width_scribble(_mpString);
+		
+			var _mpBarX = (_heroStatsContainerX-_mpStringW)-1;
+			var _mpBarY =_heroStatsContainerY+8;
+			var _mpbarW = _mpStringW;
+		
+			//Draw MP bar
+			var _mpPerc = (global.party[i].mp/global.party[i].maxMP) * 100;
+			draw_healthbar(_mpBarX,_mpBarY,_mpBarX+_mpbarW,_mpBarY+5,_mpPerc,c_black,c_gray,c_teal,0,true,false);
+		
+			//Draw MP Text
+			scribble(_mpString).align(fa_right,fa_top).draw(_heroStatsContainerX,_heroStatsContainerY);
+			
+		//Draw HP
+		
+			//Get HP and convert to highlighted string with UI font
+			var _hpString = _highlight+global.defaultUIFont+    "HP: "+string(global.party[i].hp)+"/"+string(global.party[i].maxHP);
+			var _hpStringW = string_width_scribble(_mpString);
+			var _hpX = (_heroStatsContainerX-_hpStringW)-_hpStringW-(global.textPadingH/2);
+		
+			var _hpBarX = _hpX-2;
+			var _hpBarY =_heroStatsContainerY+8;
+			var _hpbarW = _hpStringW;
+		
+			//Draw MP bar
+			var _hpPerc = (global.party[i].hp/global.party[i].maxHP) * 100;
+			draw_healthbar(_hpBarX,_hpBarY,_hpBarX+_hpbarW,_hpBarY+5,_hpPerc,c_black,c_maroon,c_green,0,true,false);
+		
+			//Draw MP Text
+			scribble(_hpString).align(fa_left,fa_top).draw(_hpX,_heroStatsContainerY);
+	
+	
 }

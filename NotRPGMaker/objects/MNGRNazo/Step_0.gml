@@ -1,12 +1,3 @@
-if(doStateReset){
-	if(stateSwitchCD>0){
-		stateSwitchCD--;
-	}
-	else{
-		global.nazoState=global.prevNazoState;
-	}
-}
-
 #region Program Controls
 
 //Fullscreen toggle

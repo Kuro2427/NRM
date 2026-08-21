@@ -29,10 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"battleWindow","filters":[],"listItems":[],"multiselect":false,"name":"battleWindow","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sNazoDefaultWindow","path":"sprites/sNazoDefaultWindow/sNazoDefaultWindow.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sNazoDefaultWindow","varType":5,},
-    {"$GMObjectProperty":"v2","%Name":"textPaddingV","filters":[],"listItems":[],"multiselect":false,"name":"textPaddingV","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"6","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"textPaddingH","filters":[],"listItems":[],"multiselect":false,"name":"textPaddingH","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"6","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"windowPaddingV","filters":[],"listItems":[],"multiselect":false,"name":"windowPaddingV","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"4","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"heroCardInfoMargin","filters":[],"listItems":[],"multiselect":false,"name":"heroCardInfoMargin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"22","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"horizontalMargin","filters":[],"listItems":[],"multiselect":false,"name":"horizontalMargin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

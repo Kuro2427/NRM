@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sNazoConsoleCommands",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sNazoConsoleCommands",
+  "parent":{
+    "name":"_NRM",
+    "path":"folders/_NRM.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -105,7 +105,9 @@
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sample Project/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Frungle","folderPath":"folders/Sample Project/Sprites/Frungle.yy","name":"Frungle","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+  ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"gamecontrollerdb.txt","CopyToMask":-1,"filePath":"datafiles","name":"gamecontrollerdb.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"test.yarn","CopyToMask":-1,"filePath":"datafiles","name":"test.yarn","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -119,6 +121,7 @@
   "name":"NotRPGMaker",
   "resources":[
     {"id":{"name":"fnNazoDefault","path":"fonts/fnNazoDefault/fnNazoDefault.yy",},},
+    {"id":{"name":"fnNazoDialogDefault","path":"fonts/fnNazoDialogDefault/fnNazoDialogDefault.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"__InputUpdateController","path":"objects/__InputUpdateController/__InputUpdateController.yy",},},
     {"id":{"name":"MNGRBattle","path":"objects/MNGRBattle/MNGRBattle.yy",},},
@@ -689,6 +692,7 @@
     {"id":{"name":"scribble_whitelist_sound","path":"scripts/scribble_whitelist_sound/scribble_whitelist_sound.yy",},},
     {"id":{"name":"scribble_whitelist_sprite","path":"scripts/scribble_whitelist_sprite/scribble_whitelist_sprite.yy",},},
     {"id":{"name":"scribble","path":"scripts/scribble/scribble.yy",},},
+    {"id":{"name":"sNazoConsoleCommands","path":"scripts/sNazoConsoleCommands/sNazoConsoleCommands.yy",},},
     {"id":{"name":"string_height_scribble_ext","path":"scripts/string_height_scribble_ext/string_height_scribble_ext.yy",},},
     {"id":{"name":"string_height_scribble","path":"scripts/string_height_scribble/string_height_scribble.yy",},},
     {"id":{"name":"string_length_scribble","path":"scripts/string_length_scribble/string_length_scribble.yy",},},

@@ -18,21 +18,22 @@ global.battleData = {
 	prevDir: DIRECTIONS.DOWN
 };
 
-global.party = [global.heroes.hero];
+global.party = [global.heroes.hero,global.heroes.hero,global.heroes.hero,global.heroes.hero];
 
 state = BATTLESTATES.INIT;
 turnQueue = [];
 
-//Battle narration
-narrationText = "A strange enemy appeared!"
+//Battle UI Container
+battleUIHeight = 84
 
-//Battle UI
-heroCardW=90;
-heroCardH=75;
-heroCardX=0;
-heroCardY=(global.guiH-heroCardH)-windowPaddingV;
-raiseWhenTunUp=16;
-raiseModifier=0;
+uiContainerX = horizontalMargin;
+uiContainerY = (global.guiH - battleUIHeight) - global.windowMarginV;
+
+uiContainerW = global.guiW - horizontalMargin*2;
+uiContainerH = battleUIHeight;
+
+//Battle commands
+commandWindowW=80;
 
 //Action Menu
 battleMenu=["Attack","Magic","Item","Flee"];
